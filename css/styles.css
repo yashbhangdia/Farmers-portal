@@ -79,14 +79,35 @@
 .navbar-nav > li > a {
   text-decoration: none;
   margin: 0px 5px;
+  position: relative;
 }
+
+.navbar-nav > li > a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: black;
+  height: 1px;
+  transition: all .5s;
+}
+
 .navbar-nav > li > a:hover,
 .navbar-nav > li > a:active,
 .navbar-nav > li > a:focus 
 {
-  color: white;
-  border: 1px solid white;
+  color: black !important;
+  /*border: 1px solid white;*/
 }
+
+.navbar-nav > li > a:hover:after{
+  width: 70%;
+}
+
 .navbar-nav > li > a:visited {
   color: white;
   text-decoration: none;
