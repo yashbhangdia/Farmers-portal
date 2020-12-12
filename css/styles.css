@@ -1,0 +1,143 @@
+.image {
+  background-color: #490d40;
+  background: url("FarmNav.jpg") no-repeat center center;
+  background-size: cover;
+  height: 670px;
+  margin-top: -80px;
+}
+.image .heading {
+  color: white;
+  text-align: center;
+  padding-top: 200px;
+}
+.image p {
+  text-align: center;
+  padding: 20px 60px;
+}
+.image p .btn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  font-size: 1.2em;
+}
+.image p .btn:hover {
+  color: white;
+  border-color: white;
+}
+
+.navbar 
+{
+  height: 80px;
+  background-color: transparent;
+  border: none;
+  color: black;
+  z-index: 1;
+  -webkit-transition: background-color 1s ease 0s;
+  transition: background-color 1s ease 0s;
+  padding:0;
+}
+
+.navbar-header
+{
+  padding-left: 2%;
+  color: black;
+}
+
+.container
+{
+  padding-right:2%; 
+}
+
+.navtoggle
+{
+  padding-right: 5%;
+}
+
+.navbar-brand {
+  margin-top: 10px;
+  color: black;
+  font-size: 1.3em;
+}
+.navbar-brand:hover {
+  color: white;
+  border: 1px solid white;
+}
+
+.nav-item
+{
+  text-align: center;
+  font-size: 1.2em; 
+  color: white;
+}
+
+.nav-link
+{
+  color: white !important;
+}
+
+.navbar-nav > li > a {
+  text-decoration: none;
+  margin: 0px 5px;
+}
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:active,
+.navbar-nav > li > a:focus 
+{
+  color: white;
+  border: 1px solid white;
+}
+.navbar-nav > li > a:visited {
+  color: white;
+  text-decoration: none;
+}
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+  background-color: transparent;
+  color: white;
+}
+.navbar-toggler {
+  border-color: white;
+}
+.navbar-toggler:hover {
+  background-color: #024249;
+}
+
+/* Solid class attached on scroll past first section */
+.navbar.solid {
+  background-color: #3797a4;
+  -webkit-transition: background-color 1s ease 0s;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+}
+
+.navbar.solid .navbar-brand {
+  color: white;
+  -webkit-transition: color 1s ease 0s;
+  transition: color 1s ease 0s;
+}
+.navbar.solid .navbar-nav > li > a {
+  color: white;
+  -webkit-transition: color 1s ease 0s;
+  transition: color 1s ease 0s;
+}
+
+.about {
+  background-color: white;
+  color: #3797a4;
+  height: 600px;
+  text-align: center;
+  margin-top: -20px;
+}
+.about h2 {
+  padding-top: 220px;
+}
+.about p {
+  padding: 20px 80px;
+}
+
+.right
+{
+  text-align: right;
+}
