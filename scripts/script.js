@@ -1,5 +1,11 @@
 $(document).ready(function() 
 {
+        var winWidth = $(window).width();
+        if(winWidth<1000)
+        {
+          $(".navbar-collapse.collapse ul").css("background-color", "#8cbed6");
+        }
+        
         // Transition effect for navbar 
         $(window).scroll(function() 
         {
@@ -27,7 +33,7 @@ $(document).ready(function()
 	        	$(".navbar-collapse.collapse ul").css("background-color", "transparent");
 	        	$(".navbar-collapse.collapse .nav-link").css("color", "white"); 
 	        }
-	        if(!isVisible || winWidth<1200)
+	        if(!isVisible || winWidth<1000)
 	        {
 	        	console.log("Smaller screen");
 	        	$(".navbar-collapse.collapse ul").css("background-color", "#8cbed6"); //d0e8f2
