@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body
+{
+  font-family: 'Poppins';
+}
+
 .image {
   background-color: #490d40;
-  background: url("FarmNav.jpg") no-repeat center center;
+  background: url("FarmNav3.jpg") no-repeat center center;
   background-size: cover;
   height: 670px;
-  margin-top: -80px;
+  margin-top: -40px;
 }
 .image .heading {
   color: white;
@@ -12,18 +19,23 @@
 }
 .image p {
   text-align: center;
-  padding: 20px 60px;
 }
 .image p .btn {
   background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  padding: 10px;
+  color: #216353;
+  border-radius: 15px;
+  padding: 20px 20px;
   font-size: 1.2em;
+  background-color: #edffea;
+  position: relative;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s ease all;
 }
-.image p .btn:hover {
+
+.image p .btn:hover
+{
+  background-color: #216353;
   color: white;
-  border-color: white;
 }
 
 .navbar 
@@ -101,7 +113,6 @@
 .navbar-nav > li > a:focus 
 {
   color: black !important;
-  /*border: 1px solid white;*/
 }
 
 .navbar-nav > li > a:hover:after{
@@ -112,6 +123,7 @@
   color: white;
   text-decoration: none;
 }
+
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:hover,
 .navbar-nav > .active > a:focus {
@@ -145,20 +157,169 @@
 }
 
 .about {
-  background-color: white;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/000/336/592/non_2x/green-clover-leaves-at-bottom-vector.jpg");
+  background-size: contain;
   color: #3797a4;
-  height: 600px;
   text-align: center;
-  margin-top: -20px;
-}
-.about h2 {
-  padding-top: 220px;
-}
-.about p {
-  padding: 20px 80px;
+  padding: 175px 0px;
 }
 
-.right
+.about p
 {
-  text-align: right;
+  padding: 0px 80px 95px 80px;
+}
+
+.info
+{
+  background: linear-gradient(0deg, rgba(220, 230, 220, 0.7), rgba(220, 230, 220, 0.7)), url("https://www.bakhabarkissan.com/wp-content/uploads/2020/02/27feb.jpeg");
+  background-attachment: fixed;
+  background-size: cover;
+  /*border: 1px solid red;*/
+}
+
+.info h1
+{
+  color: #3797a4;
+  text-align: center;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.bloghead
+{
+  display: none;
+}
+
+
+.blogimg img:hover
+{ 
+  box-shadow: -6px 6px 10px 4px #555;
+}
+
+.blogtext
+{
+  /*background-color: white;*/
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.blogtext a
+{
+  color: #3797a4;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #3797a4; 
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: grey; 
+}
+
+.fa
+{
+  color: #216353;
+}
+
+.line
+{
+  width: 2rem;
+  height: 0rem;
+  border: 1px solid green;
+}
+
+.footer
+{ 
+  float: left;
+  margin: 0 !important;
+}
+
+.signup, .login
+{
+  border: 1px solid #3797a4;
+}
+
+.signup:hover, .login:hover
+{
+  background-color: #3797a4;
+  color: white;
+}
+
+input
+{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid #216353;
+}
+
+textarea, input[type="submit"]
+{
+  border: 1px solid #216353;
+  border-radius: 5px;
+}
+
+input[type='submit']:hover
+{
+  background-color: #3797a4;
+  color: white;
+}
+
+.text-uppercase
+{
+  color: #444;
+}
+
+/*  Media Queries  */
+@media screen and (max-width: 768px)
+{
+  .blogtext
+  {
+    display: none;
+  }
+  .bloghead
+  {
+    text-align: center !important; 
+    display: inline;
+  }
+  .about
+  {
+    background-color: white;
+    background-image: url("");
+    padding: 75px 0px;
+  }
+  .about p
+  {
+    padding: 0px 40px 20px 40px;
+  }
+
+  .mob
+  {
+    display: none;
+  }
+  .contact
+  {
+    text-align: center;
+  }
+
+}
+
+@media screen and (max-width: 1024px) and (max-height: 1366px)
+{
+  .blogtext p
+  {
+    padding: 0px !important;
+  }
 }
