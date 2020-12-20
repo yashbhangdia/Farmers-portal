@@ -93,15 +93,6 @@ if (!mysqli_query($conn, $sql4))
 }
 
 
-// $sql5 = "CREATE TABLE IF NOT EXISTS sales_stats (
-//   salesid int(22) primary key,
-//   sales int(22) NOT NULL,
-//   month varchar(25) NOT NULL,
-//   pending_orders int(55) NOT NULL,
-//   revenue int(55) NOT NULL,
-//   Vistors int(55) NOT NULL
-// )";
-
 
 $sql6 = "CREATE TABLE IF NOT EXISTS cart (
   userid int(11),
@@ -154,4 +145,14 @@ if (!mysqli_query($conn, $sql8))
   echo "Error inserting in table product: " . mysqli_error($conn);
 }
 
+$sql9 = "CREATE TABLE IF NOT EXISTS coupon ( couponid varchar(50) NOT NULL,
+  farmerid int(11) NOT NULL, 
+  discount int(11) NOT NULL,
+  foreign key(farmerid) references cart(farmerid),
+  PRIMARY KEY (couponid,farmerid)
+  )";
+  if (!mysqli_query($conn, $sql9)) 
+  {
+    echo "Error inserting in table product: " . mysqli_error($conn);
+  }
 ?>
