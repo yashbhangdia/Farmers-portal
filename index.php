@@ -10,7 +10,7 @@ if(isset($_SESSION['username']) )
     if(strcmp($msg,"farmer")==0)
     {
     
-    header("location: php/welcomefarmer.php");
+    header("location: ./php/welcomefarmer.php");
     exit;
     }
     else{
@@ -89,7 +89,7 @@ if(empty($err))
                               header("location: customer.php");
                             } 
                             else {
-                              header("location: welcomefarmer.php");
+                              header("location: ./php/welcomefarmer.php");
                               $_SESSION["type"] = "farmer";
                             }       
                         }
