@@ -86,21 +86,27 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 <?php $results = mysqli_query($conn, "SELECT * from product");?>
 <div class="table1">
 
-<center><table class="table table-striped table-dark" >
+<center><table class="table table-striped table-dark table-hover" >
 <thead class="thead-dark">
     <tr>
     <th scope="col">Product id</th>
-    <th scope="col">Name</th>
-    <th scope="col">Type</th>
+    <th scope="col" >Image</th>
+    <th scope="col" >Name</th>
+    <th scope="col" >Type</th>
+    <th scope="col" >BUY</th>
     </tr>
 </thead>
     <tbody>
-    <?php while($row = mysqli_fetch_array($results)){?>
+    <?php while($row = mysqli_fetch_array($results)){
+
+      $img = "../assets/".$row['prodname']."."."png";
+      ?>
     <tr>
-        <td><?php echo $row['prodid'];?></td>
-        <td><?php echo $row['prodname'];?></td>
+        <td ><?php echo $row['prodid'];?></td>
+        <td><?php echo "<img src='{$img}' width='30%' height='30%'>";?></td>
+        <td ><?php echo $row['prodname'];?></td>
         <td><?php echo $row['prodtype'];?></td>
-        <td><button type="submit" class="btn btn-success" name="add" value = "<?php echo $row['prodid'];?>">Add to Shop</button></td>
+        <td width="20%"><button type="submit" class="btn btn-success" name="add" value = "<?php echo $row['prodid'];?>">Add to Shop</button></td>
     </tr>
     <?php } ?>
     </tbody>
