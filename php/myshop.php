@@ -22,6 +22,15 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
       .divform{
         padding:20px;
       }
+      input[type="text"] {
+        width: 100%;
+        border:none;
+        border-bottom: 1px solid #1890ff;
+        padding: 5px 10px;
+        background: transparent;
+        outline: none;
+      }
+    
     </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -72,15 +81,18 @@ $results = mysqli_query($conn, "SELECT * from myshop WHERE farmerid = '$fid'");
 <hr>
 <div class="divform">
 <div class="form-row">
+    
     <div class="form-group col-md-6">
       <label for="quantity"><h3>Quantity<h3></label>
       <input type="text" class="form-control" name="quantity" placeholder="Enter Quantity to update in kgs">
     </div>
+   
 
     <div class="form-group col-md-6">
       <label for="inputEmail4"><h3>Price<h3></label>
       <input type="text" class="form-control" name="price" placeholder="Enter updated price">
     </div>
+    
 </div>
 
 <table class="table table-striped table-dark" >
