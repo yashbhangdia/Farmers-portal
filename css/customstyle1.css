@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kalam:wght@400;700&display=swap');
+
+body
+{
+	font-family: 'Poppins';
+}
+
+.image {
+  background: url("https://www.apollopharmacy.in/blog/wp-content/uploads/2017/04/Buy_Vegetables_Cheaper_Pic-700x430.jpg") no-repeat center center;
+  background-size: cover;
+  height: 670px;
+  margin-top: -40px;
+}
+.image .heading {
+  color: white;
+  text-align: center;
+  padding-top: 200px;
+}
+.image p {
+  text-align: center;
+}
+.image p .btn {
+  background-color: transparent;
+  color: #216353;
+  border-radius: 15px;
+  padding: 20px 20px;
+  font-size: 1.2em;
+  background-color: #edffea;
+  position: relative;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s ease all;
+}
+
+.image p .btn:hover
+{
+  background-color: #216353;
+  color: white;
+}
+
+
+.navbar 
+{
+  height: 80px;
+  background-color: transparent;
+  border: none;
+  color: black;
+  z-index: 10;
+  -webkit-transition: background-color 1s ease 0s;
+  transition: background-color 1s ease 0s;
+  padding:0;
+}
+
+.navbar-header
+{
+  padding-left: 2%;
+  color: black;
+}
+
+.container
+{
+  padding-right:0.5%; 
+}
+
+.navtoggle
+{
+  padding-right: 5%;
+}
+
+.navbar-brand {
+  margin-top: 10px;
+  color: black;
+  font-size: 1.3em;
+}
+
+.nav-item
+{
+  text-align: center;
+  font-size: 1.2em; 
+  color: white;
+}
+
+.nav-link
+{
+  color: white !important;
+}
+
+.navbar-nav > li > a {
+  text-decoration: none;
+  margin: 0px 5px;
+  position: relative;
+}
+
+.navbar-nav > li > a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #ffda77;
+  height: 1px;
+  transition: all .5s;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:active,
+.navbar-nav > li > a:focus 
+{
+  color: #ffda77 !important;
+}
+
+.navbar-nav > li > a:hover:after{
+  width: 70%;
+}
+
+.navbar-nav > li > a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+  background-color: transparent;
+  color: white;
+}
+.navbar-toggler {
+  border-color: white;
+}
+.navbar-toggler:hover {
+  background-color: #024249;
+}
+
+/* Solid class attached on scroll past first section */
+.navbar.solid {
+  background-color: #216353;
+  -webkit-transition: background-color 1s ease 0s;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+}
+
+.navbar.solid .navbar-brand {
+  color: white;
+  -webkit-transition: color 1s ease 0s;
+  transition: color 1s ease 0s;
+}
+.navbar.solid .navbar-nav > li > a {
+  color: white;
+  -webkit-transition: color 1s ease 0s;
+  transition: color 1s ease 0s;
+}
+
+.about
+{
+	padding: 130px 40px 0px 40px;
+}
+
+.about h1
+{
+	font-size: 5em; 
+	opacity: 0.3;
+}
+
+.about h4
+{
+	color: #216353;
+}
+
+.heading h1
+{
+	font-weight: 700;
+	letter-spacing: 2px;
+	font-size: 3.5em;
+}
+
+.subhead p
+{
+	text-align: center;
+	font-size: 1.75em;
+	font-family: 'Kalam';
+	color: #519872;
+}
+
+.product
+{
+	padding: 3%;
+	height: 460px;
+}
+
+.card
+{
+	background-color: #f5f5f5;
+	padding: 4%;
+	border-radius: 15px;
+	text-align: center;
+	border: none;
+}
+
+.card-text
+{
+	font-weight: 600;
+	color: #519872;
+	font-size: 1.1em;
+}
+
+.card-img-top
+{
+	height: 20vw;
+  object-fit: cover;
+}
+
+.addtocart
+{
+	color: white;
+	background-color: #519872;
+	padding: 5%;
+	border-radius: 50%;
+	display: none;
+}
+
+.addtocart:hover
+{
+	background-color: #f2d974;
+}
+
+.card:hover
+{
+	background-color: white;
+  	animation: card-hover 0.5s 1 forwards;
+  	z-index: 9;
+}
+
+.card:hover .addtocart
+{
+	display: inline;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #216353; 
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: grey; 
+}
+
+
+@keyframes card-hover {
+  100% {
+    transform: translate3D(0,-1px,0) scale(1.03);
+  	box-shadow: -10px 10px 10px rgba(39,44,49,.07), 10px 10px 10px rgba(39,44,49,.07);
+  }
+}
+
+@media screen and (max-width: 768px)
+{
+  .abouticon
+  {
+    display: none;
+  }
+
+  .card-img-top
+  {
+    height: 50vw;
+    object-fit: cover;
+  }
+
+  .addtocart
+  {
+    display: inline;
+  }
+}

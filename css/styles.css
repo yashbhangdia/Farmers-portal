@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body
+{
+  font-family: 'Poppins';
+}
+
+.image {
+  background: url("../assets/FarmNav3.jpg") no-repeat center center;
+  background-size: cover;
+  height: 670px;
+  margin-top: -40px;
+}
+.image .heading {
+  color: white;
+  text-align: center;
+  padding-top: 200px;
+}
+
+.navbar 
+{
+  height: 80px;
+  background-color: transparent;
+  border: none;
+  color: black;
+  z-index: 1;
+  -webkit-transition: background-color 1s ease 0s;
+  transition: background-color 1s ease 0s;
+  padding:0;
+}
+
+.navbar-header
+{
+  padding-left: 2%;
+  color: black;
+}
+
+.container
+{
+  padding-right:2%; 
+}
+
+.navtoggle
+{
+  padding-right: 5%;
+}
+
+.navbar-brand {
+  margin-top: 10px;
+  color: black;
+  font-size: 1.3em;
+}
+
+.nav-item
+{
+  text-align: center;
+  font-size: 1.2em; 
+  color: white;
+}
+
+.nav-link
+{
+  color: white !important;
+}
+
+.navbar-nav > li > a {
+  text-decoration: none;
+  margin: 0px 5px;
+  position: relative;
+}
+
+.navbar-nav > li > a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: black;
+  height: 1px;
+  transition: all .5s;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:active,
+.navbar-nav > li > a:focus 
+{
+  color: black !important;
+}
+
+.navbar-nav > li > a:hover:after{
+  width: 70%;
+}
+
+.navbar-nav > li > a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+  background-color: transparent;
+  color: white;
+}
+.navbar-toggler {
+  border-color: white;
+}
+.navbar-toggler:hover {
+  background-color: #024249;
+}
+
+/* Solid class attached on scroll past first section */
+.navbar.solid {
+  background-color: #3797a4;
+  -webkit-transition: background-color 1s ease 0s;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+}
+
+.navbar.solid .navbar-brand {
+  color: white;
+  -webkit-transition: color 1s ease 0s;
+  transition: color 1s ease 0s;
+}
+.navbar.solid .navbar-nav > li > a {
+  color: white;
+  -webkit-transition: color 1s ease 0s;
+  transition: color 1s ease 0s;
+}
+
+.about {
+  background-image: url("https://static.vecteezy.com/system/resources/previews/000/336/592/non_2x/green-clover-leaves-at-bottom-vector.jpg");
+  background-size: contain;
+  color: #3797a4;
+  text-align: center;
+  padding: 175px 0px;
+}
+
+.about p
+{
+  padding: 0px 80px 95px 80px;
+}
+
+.info
+{
+  background: linear-gradient(0deg, rgba(220, 230, 220, 0.7), rgba(220, 230, 220, 0.7)), url("https://www.bakhabarkissan.com/wp-content/uploads/2020/02/27feb.jpeg");
+  background-attachment: fixed;
+  background-size: cover;
+  /*border: 1px solid red;*/
+}
+
+.info h1
+{
+  color: #3797a4;
+  text-align: center;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.bloghead
+{
+  display: none;
+}
+
+
+.blogimg img:hover
+{ 
+  box-shadow: -6px 6px 10px 4px #555;
+}
+
+.blogtext
+{
+  /*background-color: white;*/
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.blogtext a
+{
+  color: #3797a4;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #3797a4; 
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: grey; 
+}
+
+.fa
+{
+  color: #216353;
+}
+
+.line
+{
+  width: 2rem;
+  height: 0rem;
+  border: 1px solid green;
+}
+
+.footer
+{ 
+  float: left;
+  margin: 0 !important;
+}
+
+.signupbtn, .loginbtn
+{
+  border: 1px solid #3797a4;
+}
+
+.signupbtn:hover, .loginbtn:hover
+{
+  background-color: #3797a4;
+  color: white;
+}
+
+input
+{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid #216353;
+}
+
+textarea, input[type="submit"]
+{
+  border: 1px solid #216353;
+  border-radius: 5px;
+}
+
+input[type='submit']:hover
+{
+  background-color: #3797a4;
+  color: white;
+}
+
+.text-uppercase
+{
+  color: #444;
+}
+
+/*  Media Queries  */
+@media screen and (max-width: 768px)
+{
+  .blogtext
+  {
+    display: none;
+  }
+  .bloghead
+  {
+    text-align: center !important; 
+    display: inline;
+  }
+  .about
+  {
+    background-color: white;
+    background-image: url("");
+    padding: 75px 0px;
+  }
+  .about p
+  {
+    padding: 0px 40px 20px 40px;
+  }
+
+  .mob
+  {
+    display: none;
+  }
+  .contact
+  {
+    text-align: center;
+  }
+
+}
+
+
+
+/*ADDED FOR LOGIN MODAL*/
+/* Add Zoom Animation */
+.wrapper {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+.wrapper{
+    overflow: hidden;
+    max-width: 390px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  }
+  .wrapper .title-text{
+    display: flex;
+    width: 200%;
+  }
+  .wrapper .title{
+    width: 50%;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+  }
+  .wrapper .slide-controls{
+    position: relative;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    margin: 30px 0 10px 0;
+    justify-content: space-between;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+  }
+  .slide-controls .slide{
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 48px;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.6s ease;
+  }
+  .slide-controls label.signup{
+    color: #000;
+  }
+  .slide-controls .slider-tab{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0;
+    z-index: 0;
+    border-radius: 5px;
+    background: -webkit-linear-gradient(left, #1CD8D2, #93EDC7);
+    transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+  }
+  input[type="radio"]{
+    display: none;
+  }
+  #signup:checked ~ .slider-tab{
+    left: 50%;
+  }
+  #signup:checked ~ label.signup{
+    color: #fff;
+    cursor: default;
+    user-select: none;
+  }
+  #signup:checked ~ label.login{
+    color: #000;
+  }
+  #login:checked ~ label.signup{
+    color: #000;
+  }
+  #login:checked ~ label.login{
+    cursor: default;
+    user-select: none;
+  }
+  .wrapper .form-container{
+    width: 100%;
+    overflow: hidden;
+  }
+  .form-container .form-inner{
+    display: flex;
+    width: 200%;
+  }
+  .form-container .form-inner form{
+    width: 50%;
+    transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+  }
+  .form-inner form .field{
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .form-inner form .field input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+  }
+  .form-inner form .field input:focus{
+    border-color: #3797a4;
+    /* box-shadow: inset 0 0 3px #fb6aae; */
+  }
+  .form-inner form .field input::placeholder{
+    color: #999;
+    transition: all 0.3s ease;
+  }
+  form .field input:focus::placeholder{
+    color: #3797a4;
+  }
+  .form-inner form .pass-link{
+    margin-top: 5px;
+  }
+  .form-inner form .signup-link{
+    text-align: center;
+    margin-top: 30px;
+  }
+  .form-inner form .pass-link a,
+  .form-inner form .signup-link a{
+    color: #3797a4;
+    text-decoration: none;
+  }
+  .form-inner form .pass-link a:hover,
+  .form-inner form .signup-link a:hover{
+    text-decoration: underline;
+  }
+  form .btn{
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+  }
+  form .btn .btn-layer{
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    background: -webkit-linear-gradient(left, #1CD8D2, #93EDC7);
+    border-radius: 5px;
+    transition: all 0.4s ease;;
+  }
+  form .btn:hover .btn-layer{
+    left: 0;
+  }
+  form .btn input[type="submit"]{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    background: none;
+    border: none;
+    color: #fff;
+    padding-left: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+
+/*######################## LOGIN/SIGNUP PAGE START ##################################*/
+
+.at-login-form .modal-dialog {
+    /*width: 500px;*/
+    margin: 30px auto;
+}
+
+.at-login-form .modal-content
+{
+  padding: 0px 10px;
+}
+
+.at-login-form  .modal-header {
+    padding: 10px 10px;
+}
+
+@media screen and (max-width: 1024px) and (max-height: 1366px)
+{
+  .blogtext p
+  {
+    padding: 0px !important;
+  }
+}

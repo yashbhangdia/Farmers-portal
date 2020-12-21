@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kalam:wght@400;700&display=swap');
+
+body
+{
+  font-family: 'Poppins';
+}
+
+.image {
+  background: url("https://cdn.pixabay.com/photo/2020/09/15/15/56/background-5574027_1280.png") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 500px;
+  margin-top: -20px;
+}
+.image .heading {
+  text-align: center;
+  padding-top: 180px;
+}
+
+.heading h1
+{
+  font-weight: 500;
+  /*letter-spacing: 2px;*/
+  font-size: 3.5em;
+}
+
+.subhead p
+{
+  text-align: center;
+  font-size: 1.75em;
+  font-family: 'Kalam';
+  color: #3797a4;
+}
+
+.navbar 
+{
+  height: 80px;
+  background-color: #3797a4;
+  border: none;
+  color: black;
+  z-index: 1;
+  -webkit-transition: background-color 1s ease 0s;
+  transition: background-color 1s ease 0s;
+  padding:0;
+}
+
+.navbar-header
+{
+  padding-left: 2%;
+  color: black;
+}
+
+.container
+{
+  padding-right:2%; 
+}
+
+.navtoggle
+{
+  padding-right: 5%;
+}
+
+.navbar-brand {
+  margin-top: 10px;
+  color: black;
+  font-size: 1.3em;
+}
+
+.nav-item
+{
+  text-align: center;
+  font-size: 1.2em; 
+  color: white;
+}
+
+.nav-link
+{
+  color: white !important;
+}
+
+.navbar-nav > li > a {
+  text-decoration: none;
+  margin: 0px 5px;
+  position: relative;
+}
+
+.navbar-nav > li > a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: black;
+  height: 1px;
+  transition: all .5s;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:active,
+.navbar-nav > li > a:focus 
+{
+  color: black !important;
+}
+
+.navbar-nav > li > a:hover:after{
+  width: 70%;
+}
+
+.navbar-nav > li > a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+  background-color: #3797a4;
+  color: white;
+}
+.navbar-toggler {
+  border-color: white;
+}
+.navbar-toggler:hover {
+  background-color: #8db596;
+}

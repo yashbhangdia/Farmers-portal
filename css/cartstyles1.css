@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kalam:wght@400;700&display=swap');
+
+body
+{
+  font-family: 'Poppins';
+}
+
+.image {
+  background: url("https://cdn140.picsart.com/296422023201211.png?type=webp&to=min&r=640") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 500px;
+  margin-top: -20px;
+}
+.image .heading {
+  text-align: center;
+  padding-top: 240px;
+}
+
+.heading h1
+{
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 3.5em;
+}
+
+.subhead p
+{
+  text-align: center;
+  font-size: 1.75em;
+  font-family: 'Kalam';
+  color: #519872;
+}
+
+.navbar 
+{
+  height: 80px;
+  background-color: #707070;
+  border: none;
+  color: black;
+  z-index: 1;
+  -webkit-transition: background-color 1s ease 0s;
+  transition: background-color 1s ease 0s;
+  padding:0;
+}
+
+.navbar-header
+{
+  padding-left: 2%;
+  color: black;
+}
+
+.container
+{
+  padding-right:2%; 
+}
+
+.navtoggle
+{
+  padding-right: 5%;
+}
+
+.navbar-brand {
+  margin-top: 10px;
+  color: black;
+  font-size: 1.3em;
+}
+
+.nav-item
+{
+  text-align: center;
+  font-size: 1.2em; 
+  color: white;
+}
+
+.nav-link
+{
+  color: white !important;
+}
+
+.navbar-nav > li > a {
+  text-decoration: none;
+  margin: 0px 5px;
+  position: relative;
+}
+
+.navbar-nav > li > a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: black;
+  height: 1px;
+  transition: all .5s;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:active,
+.navbar-nav > li > a:focus 
+{
+  color: black !important;
+}
+
+.navbar-nav > li > a:hover:after{
+  width: 70%;
+}
+
+.navbar-nav > li > a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+  background-color: #707070;
+  color: white;
+}
+.navbar-toggler {
+  border-color: white;
+}
+.navbar-toggler:hover {
+  background-color: #8db596;
+}
+
+thead
+{
+  font-size: 1.3em;
+}
+
+th
+{
+  font-weight: 500 !important;
+  background-color: #eee;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #707070; 
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: grey; 
+}
+
+.coupon label
+{
+  border: none; 
+  font-size: 2em;
+  font-weight: 600;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+.total label
+{
+  border: none; 
+  font-size: 2em;
+  font-weight: 600;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+.at-login-form .modal-dialog {
+    /*width: 500px;*/
+    margin: 30px auto;
+}
+
+.at-login-form .modal-content
+{
+  padding: 0px 10px;
+}
+
+.at-login-form  .modal-header {
+    padding: 10px 10px;
+}
+
+.wrapper {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+.wrapper{
+    overflow: hidden;
+    max-width: 390px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  }
+  .wrapper .title-text{
+    display: flex;
+    width: 200%;
+  }
+  .wrapper .title{
+    width: 50%;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+  }
+
+  @media screen and (max-width: 768px)
+  {
+    #couponicon
+    {
+      width: 50%;
+    }
+    
+    .left
+    {
+      padding: 0 !important;
+    }
+    #couponcode
+    {
+      padding-top: 15%;
+      font-size: 1.5em;
+    }
+
+    #quant
+    {
+      width: 20px !important;
+    }
+
+  }
