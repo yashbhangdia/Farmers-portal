@@ -18,20 +18,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <style>
-      .divform{
-        padding:20px;
-      }
-      input[type="text"] {
-        width: 100%;
-        border:none;
-        border-bottom: 1px solid #1890ff;
-        padding: 5px 10px;
-        background: transparent;
-        outline: none;
-      }
-    
-    </style>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -69,7 +56,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 </nav>
 
 
-<form method="POST" action="updatemyshop.php">
+<form method="POST" action="insert.php">
 <?php 
 $user = $_SESSION['username'];
 $sql2 = mysqli_query($conn,"SELECT * FROM farmer WHERE username='$user'");
@@ -78,27 +65,10 @@ $fid = $row["farmerid"];
 $results = mysqli_query($conn, "SELECT * from myshop WHERE farmerid = '$fid'");
 
     ?>
-<hr>
-<div class="divform">
-<div class="form-row">
-    
-    <div class="form-group col-md-6">
-      <label for="quantity"><h3>Quantity<h3></label>
-      <input type="text" class="form-control" name="quantity" placeholder="Enter Quantity to update in kgs">
-    </div>
-   
-
-    <div class="form-group col-md-6">
-      <label for="inputEmail4"><h3>Price<h3></label>
-      <input type="text" class="form-control" name="price" placeholder="Enter updated price">
-    </div>
-    
-</div>
 
 <table class="table table-striped table-dark" >
 <thead class="thead-dark">
     <tr>
-    <th scope="col">Product id</th>
     <th scope="col">Product id</th>
     <th scope="col">Name</th>
     <th scope="col">Quantity</th>
@@ -109,25 +79,23 @@ $results = mysqli_query($conn, "SELECT * from myshop WHERE farmerid = '$fid'");
     <?php while($row = mysqli_fetch_array($results)){?>
     <tr>
         <td><?php echo $row['prodid'];?></td>
-
-        <td><?php $idprod = $row['prodid'];
+        <td><?php
+              $idprod = $row['prodid'];
              $sql = mysqli_query($conn, "SELECT * from product WHERE prodid='$idprod'");
              $row1 = mysqli_fetch_array($sql);
-             $img = "../assets/".$row1['prodname']."."."png";
-             echo "<img src='{$img}' width='30%' height='30%'>";?></td>
-        <td><?php echo $row1['prodname'];?>  
+             echo $row1['prodname'];
+          ?>  
          </td>
         <td><?php echo $row['quantity'];?></td>
         <td><?php echo $row['price'];?></td>
         
-        <td><button type="submit" class="btn btn-danger" name="delete" value = "<?php echo $row['prodid'];?>">Delete</button></td>
-        <td><button type="submit" class="btn btn-success" name="update" value = "<?php echo $row['prodid'];?>">Update</button></td>
+        <td><button type="submit" class="btn btn-danger" name="delete" value = "<?php echo $row['productid'];?>">Delete</button></td>
+        <td><button type="submit" class="btn btn-success" name="update" value = "<?php echo $row['productid'];?>">Update</button></td>
     </tr>
     <?php } ?>
     </tbody>
 </table>
 </form>
-</div>
 
    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -23,70 +23,14 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=greek-ext');
-
-body{
-	background-image: url("https://unsplash.com/photos/fjj7lVpCxRE");
-	background-position: center;
-    background-origin: content-box;
-    background-repeat: no-repeat;
-    background-size: cover;
-	min-height:100vh;
-	font-family: 'Noto Sans', sans-serif;
-}
-
-.box{
-	position:absolute;
-	left:50%;
-	top:50%;
-	transform: translate(-50%,-50%);
-    background-color: rgba(0, 0, 0, 0.89);
-	border-radius:3px;
-	padding:70px 100px;
-}
-
-.input-container input{ 
-  border:0;
-  border-bottom:1px solid #555;  
-  background:transparent;
-  width:100%;
-  padding:8px 0 5px 0;
-  font-size:16px;
-  color:#fff;
-}
-.input-container input:focus{ 
- border:none;	
- outline:none;
- border-bottom:1px solid #00FA9A;	
-}
-/*.btn{
-	color:#fff;
-	background-color:#e74c3c;
-	outline: none;
-    border: 0;
-    color: #fff;
-	padding:10px 20px;
-	text-transform:uppercase;
-	margin-top:50px;
-	border-radius:2px;
-	cursor:pointer;
-	position:relative;
-}*/
-
-.input-container input:focus ~ label,
-.input-container input:valid ~ label{
-	top:-12px;
-	font-size:12px;
-	
-}
         .table{
-            width : 100%;
+            width : 70%;
             border-radius: 20px;
 
         }
-       
-        
+        .table1{
+            margin:auto;
+        }
     </style>
     <title>Products</title>
   </head>
@@ -118,48 +62,52 @@ body{
 
   </div>
 </nav>
-<div class="container">
+
 <div class="container mt-4">
 <h3>Currently available Products</h3>
 <hr>
 </div>
+<div class="container">
+<form method="POST" action="insert.php">
+ <div class="form-group">
+    <label for="id">ID</label>
+    <input type="text" class="form-control" name="prodid" placeholder="Enter Id of the product">
+ </div>
+ <div class="form-group">
+    <label for="quantity">Quantinty</label>
+    <input type="text" class="form-control" name="quantity" placeholder="Enter Quantity in kilograms">  
+  </div>
+  
+ <div class="form-group">
+    <label for="price">Price</label>
+    <input type="text" class="form-control" name="price" placeholder="Enter Price">
+ </div>
+
 <?php $results = mysqli_query($conn, "SELECT * from product");?>
 <div class="table1">
 
-<center><table class="table table-striped table-dark table-hover" >
+<center><table class="table table-striped table-dark" >
 <thead class="thead-dark">
     <tr>
     <th scope="col">Product id</th>
-    <th scope="col" >Image</th>
-    <th scope="col" >Name</th>
-    <th scope="col" >Type</th>
-    <th scope="col" >Quantity (in kgs)</th>
-    <th scope="col" >Rate(per kg)</th>
-
+    <th scope="col">Name</th>
+    <th scope="col">Type</th>
     </tr>
 </thead>
     <tbody>
-    <?php while($row = mysqli_fetch_array($results)){
-
-      $img = "../assets/".$row['prodname']."."."png";
-      ?>
+    <?php while($row = mysqli_fetch_array($results)){?>
     <tr>
-    <form method="POST" action="insert.php">
-    <input name="proid" type="number" value="<?php echo $row['prodid'];?>" readonly required style="visibility:hidden;">
-        <td ><?php echo $row['prodid'];?></td>
-        <td><?php echo "<img src='{$img}' width='30%' height='30%'>";?></td>
-        <td ><?php echo $row['prodname'];?></td>
+        <td><?php echo $row['prodid'];?></td>
+        <td><?php echo $row['prodname'];?></td>
         <td><?php echo $row['prodtype'];?></td>
-        <td> <div class="input-container"><input type=text name=qty ></td>
-		    <td> <div class="input-container"><input type=text name=price ></div> </td>
-        <td width="20%"><button type="submit" class="btn btn-success" name="add">Add to Shop</button></td>
-    </form>
+        <td><button type="submit" class="btn btn-success" name="add" value = "<?php echo $row['prodid'];?>">Add to Shop</button></td>
     </tr>
     <?php } ?>
     </tbody>
 </table></center>
     </div>
-</div>
+    </form>
+    </div>
 
 
 

@@ -93,12 +93,12 @@ if (!mysqli_query($conn, $sql4))
 }
 
 
-
 $sql6 = "CREATE TABLE IF NOT EXISTS cart (
   userid int(11),
   prodid int(11),
   farmerid int(11) ,
   cart_quantity int(11) NOT NULL,
+  flag boolean not null default 1,
   foreign key(prodid, farmerid) references myshop(prodid, farmerid),
   foreign key(userid) references users(userid),
   CONSTRAINT cartid PRIMARY KEY (prodid, farmerid, userid)
@@ -111,15 +111,16 @@ if (!mysqli_query($conn, $sql6))
 
 
 $sql7 = "CREATE TABLE IF NOT EXISTS myorder(
-	orderid int(11) AUTO_INCREMENT not null,
+	orderid int(11) not null,
 	userid int(11),
 	prodid int(11),
 	farmerid int(11),
   amount int(11),
 	status int(11) not null DEFAULT 0,
+  quantity int(11),
+  orderdate datetime default now(),
 	foreign key(prodid, farmerid, userid) references cart(prodid, farmerid, userid),
 	primary key(orderid, prodid, farmerid, userid)
-
 )";
 if (!mysqli_query($conn, $sql7)) 
 {
@@ -145,14 +146,26 @@ if (!mysqli_query($conn, $sql8))
   echo "Error inserting in table product: " . mysqli_error($conn);
 }
 
-$sql9 = "CREATE TABLE IF NOT EXISTS coupon ( couponid varchar(50) NOT NULL,
-  farmerid int(11) NOT NULL, 
-  discount int(11) NOT NULL,
-  foreign key(farmerid) references cart(farmerid),
-  PRIMARY KEY (couponid,farmerid)
-  )";
-  if (!mysqli_query($conn, $sql9)) 
-  {
-    echo "Error inserting in table product: " . mysqli_error($conn);
-  }
+//200 - 10%, 300-15$, 500-20%
+$sql9 = "CREATE TABLE IF NOT EXISTS coupon(
+  couponcode VARCHAR(20),
+  discount int(11) not null,
+  pricelimit int(11) not null,
+  primary key(couponcode)
+)";
+if (!mysqli_query($conn, $sql9)) 
+{
+  echo "Error creating table order: " . mysqli_error($conn);
+}
+
+
+$sql10 = "INSERT IGNORE INTO coupon (couponcode, discount, pricelimit) VALUES
+('KRISHI200', 10, 200),
+('KRISHI300', 15, 300),
+('KRISHI500', 20, 500)";
+if (!mysqli_query($conn, $sql10)) 
+{
+  echo "Error inserting in table product: " . mysqli_error($conn);
+}
+
 ?>

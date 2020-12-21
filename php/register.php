@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
 
             // Set the value of param username
             $param_username = trim($_POST["email"]);
-            echo "username::: ", $param_username;
+            //echo "username::: ", $param_username;
 
             // Try to execute this statement
             if(mysqli_stmt_execute($stmt))
