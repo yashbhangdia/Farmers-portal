@@ -73,7 +73,8 @@ else{
     $password = trim($_POST['password']);
     $addr = trim($_POST['addr']);
     $mobile = trim($_POST['mobile']);
-    $name = trim($_POST['name']);   
+    $name = trim($_POST['name']);
+    $gender = trim($_POST['gender']);   
 }
 // Check for confirm password field
 if(trim($_POST['password']) !=  trim($_POST['confirm_password'])){
@@ -87,16 +88,16 @@ if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
 {
   if(!isset($_POST['checkbox1']))
   {
-    $sql = "INSERT INTO users (username,password,name,address,mobile) VALUES (?,?,?,?,?)";
+    $sql = "INSERT INTO users (username,password,name,address,mobile,gender) VALUES (?,?,?,?,?,?)";
   } else {
-    $sql = "INSERT INTO farmer (username,password,name,address,mobile) VALUES (?,?,?,?,?)";
+    $sql = "INSERT INTO farmer (username,password,name,address,mobile,gender) VALUES (?,?,?,?,?,?)";
   }
    
 
     $stmt = mysqli_prepare($conn, $sql);
     if ($stmt)
     {
-        mysqli_stmt_bind_param($stmt, "sssss", $param_username, $param_password,$param_name,$param_address,$param_mobile);
+        mysqli_stmt_bind_param($stmt, "ssssss", $param_username, $param_password,$param_name,$param_address,$param_mobile,$param_gender);
 
         // Set these parameters
         $param_username = $username;
@@ -104,6 +105,7 @@ if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
         $param_address = $addr;
         $param_name = $name;
         $param_mobile = $mobile;
+        $param_gender = $gender;
       
 
         // Try to execute the query
@@ -194,6 +196,18 @@ mysqli_close($conn);
       </div>
     </div>
 
+    <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="gender">Gender</label>
+      <select id="gender" name="mobile" class="form-control">
+        <option selected></option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Others</option>
+      </select>
+    </div>
+  </div>
+
   <div class="form-group">
     <label for="inputAddress2">Address</label>
     <input type="text" class="form-control" name = "addr" id="inputAddress2" placeholder="Address" required>
@@ -202,13 +216,6 @@ mysqli_close($conn);
     <div class="form-group col-md-6">
       <label for="inputCity">City</label>
       <input type="text" class="form-control" id="inputCity"required>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>Maharashtra</option>
-      </select>
     </div>
     <div class="form-group col-md-2">
       <label for="inputZip">Zip</label>

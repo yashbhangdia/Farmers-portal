@@ -44,6 +44,7 @@ $sql1 = "CREATE TABLE IF NOT EXISTS farmer (
   name varchar(100) NOT NULL,
   address varchar(100) NOT NULL,
   mobile text NOT NULL,
+  gender text NOT NULL,
   -- created_at datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (farmerid)
 )";
@@ -71,6 +72,7 @@ $sql3 = "CREATE TABLE IF NOT EXISTS users (
   name varchar(100) NOT NULL,
   address varchar(100) NOT NULL,
   mobile text NOT NULL,
+  gender text NOT NULL,
   created_at datetime NOT NULL DEFAULT current_timestamp()
 )";
 if (!mysqli_query($conn, $sql3)) 
