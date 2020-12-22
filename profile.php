@@ -59,14 +59,28 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
       </div>
     </nav>
 
+    <?php 
+      $uname = $_SESSION['username'];
+      $sql = mysqli_query($conn, "SELECT * from users where username='$uname'");
+      $row = mysqli_fetch_array($sql);
+      $gender = $row['gender'];
+    ?>
+
     <div class="image">
     	<div class="heading text-center">
-           <img src="./assets/man.png" class="img-responsive" width="10%">
+           <img src="./assets/<?php 
+              if(strcmp($gender,"Female")==0)
+              {
+                echo "woman";
+              }
+              else
+              {
+                echo "man";
+              }
+
+            ?>.png" class="img-responsive" width="10%">
 			   <h1>Hello 
           <?php 
-          $uname = $_SESSION['username'];
-          $sql = mysqli_query($conn, "SELECT * from users where username='$uname'");
-          $row = mysqli_fetch_array($sql);
           echo $row['name']; ?></h1>
 		  </div>
   		<div class="subhead">

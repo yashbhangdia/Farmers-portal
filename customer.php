@@ -152,7 +152,15 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 							$prodid = $row['prodid'];
 							$res = mysqli_query($conn, "SELECT * from myshop where prodid='$prodid' and price = (select min(price) from myshop where prodid='$prodid')");
 							$row1 = mysqli_fetch_array($res);
-							echo "₹",$row1['price'], " per kg";
+							if($row1)
+							{
+								echo "₹",$row1['price'], " per kg";	
+							}
+							else
+							{
+								echo "Out Of Stock";
+							}
+							
 						?></p>
 						<form id="addcart" action="http://localhost/Farmer/php/addtocart.php" method="post">
 							<button name="add" class="btn addtocart" value="<?php echo $row['prodid'],",",$row1['farmerid'],",",$row1['price']; ?>" onclick="adding('<?php echo $row['prodname']; ?>')">
