@@ -20,11 +20,22 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+        <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./css/farmerstyle.css">
+     <!--  font -->
+   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>Welcome farmer!</title>
+    <style>
+       *{
+       font-family: 'Poppins', sans-serif;
+      }
+    </style>
   </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><img src="../assets/Logokrishi.png"/></a>
   <a class="navbar-brand" href="#">Farmer</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -45,7 +56,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
   <div class="navbar-collapse collapse">
   <ul class="navbar-nav ml-auto">
   <li class="nav-item active">
-        <a class="nav-link" href="#"> <img src="https://img.icons8.com/metro/26/000000/guest-male.png"> <?php echo "Welcome ". $_SESSION['username']?></a>
+        <a class="nav-link" href="#">  <img src="https://img.icons8.com/metro/26/ffffff/user-male.png"> <?php echo " ". $_SESSION['username']?></a>
       </li>
   </ul>
   </div>
@@ -54,55 +65,53 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
   </div>
 </nav>
 
-<div class="container mt-4">
-<h3><?php echo "Welcome ". $_SESSION['username']?>! Have a Good Day!</h3>
+<div class="col-lg-12">
+  <br>
+<h3 style="font-size: 16px;"><?php echo "Welcome ". $_SESSION['username']?>! Have a Good Day!</h3>
 <hr>
 
 </div>
 
 <div class="container-fluid">
-                        <h1 class="mt-4">Dashboard</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
+                        <h2 class="mt-4">Dashboard</h1>
+                           <hr>
+                        <div class="row" style="height: 450px">
+
+                            <div class="col-xl-4 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">My Orders</div>
+                                    <div class="card-body">My Orders <img style="height:68px;padding:6px;" src="https://img.icons8.com/fluent-systems-regular/64/ffffff/purchase-order.png"/></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <a class="small text-white stretched-link" href="order.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
+                            <div class="col-xl-4 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">My Shop</div>
+                                    <div class="card-body"> <b>My Shop </b> <img style="padding:10px;" src="https://img.icons8.com/android/48/ffffff/shop.png"/> </div> 
                                     <div class="card-footer d-flex align-items-center justify-content-between">
+
                                         <a class="small text-white stretched-link" href="myshop.php">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
+                            <div class="col-xl-4 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Add Items to Shop</div>
+                                    <div class="card-body"> <b>Add Items to Shop </b> <img style="height:70px;padding:6px;" src=https://img.icons8.com/pastel-glyph/64/ffffff/box--v2.png></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="products.php">View Details</a>
+                                        <a class="small text-white stretched-link" href="products.php">View Details </a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Manage Coupons</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
+                          
                         </div>
+                        <div class="row py-2 mt-3" style=" font-weight: 600;">
+        <div class="col-lg-12 text-center">
+          © 2020 Copyright <a href="#" style="text-decoration: none; color: inherit">KrishiMitra</a>
+        </div>
+        </div>
 </div>
 
     <!-- Optional JavaScript -->
