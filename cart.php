@@ -365,7 +365,7 @@ if(isset($_POST['minus']))
 				    </div>
 				</div>
 				<div class="modal-footer">
-					<form method="post" action="http://localhost/Farmer/php/addtoorder.php">
+					<form method="post" action="./php/addtoorder.php">
 						<button class="btn btn-success" name="confirm">CONFIRM</button>
 					</form>
 					<button class="btn btn-danger" data-dismiss="modal" name="cancel">CANCEL</button>
