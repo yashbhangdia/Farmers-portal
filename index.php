@@ -26,9 +26,7 @@ $err = "";
 // if request method is post
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
  
-    
- 
-      if(!isset($_POST['farmer']))
+     if(!isset($_POST['farmer']))
       {
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
@@ -230,21 +228,21 @@ if(empty($err))
 	<div id="about" class="about row m-0">
 		<div class="col-lg-12">
 			<h1>What We Do</h1>
-	   		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	   		<p>Marginal farmers often struggle with the historic obstacle of technological isolation and have zero access to educational, scientific information and the market. KrishiMitra connects Farmers to Customers directly, eliminating the middlemen and empowering the Farmers. We bring products right from the farm to your kitchen. Krishi Mitra is a platform for customers to buy farm fresh products at their best prices online.</p>
 		</div>
 	</div>
 
 	<div id="blogs" class="container-fluid info">
 		<h1>Blogs</h1>
-		<div class="bloghead"><h3>Eco-Friendly Equipments</h3></div>
+		<div class="bloghead"><h3>Eco-Friendly Practices</h3></div>
 		<div class="row py-3 px-5">
 			<div class="col-lg-4 blogimg">
 		   		<img class = "img-responsive" src="https://blogs.worldbank.org/sites/default/files/blogs-images/2019-09/digital_agriculture3.jpg" width = "100%">
 		   </div>
 		   <div class="col-lg-8 blogtext">
-		   		<h2>Eco-Friendly Equipments</h2>
-		   		<p style="padding: 1.5em 1em 1em 0em;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		   		<span><a href="#">Read More >></a></span></p>
+		   		<h2>Eco-Friendly Practices</h2>
+		   		<p style="padding: 1.5em 1em 1em 0em;">World needs, eco-friendly farming systems for sustainable agriculture. This is the need of the present day. There is an urgent need to develop farming techniques, which are sustainable from environmental, production, and socioeconomic points of view. The means to guarantee sufficient food production in the next decades and beyond is critical because modern agriculture production throughout the world does not appear to be sustainable in the long-term.
+		   		<span><a href="https://biocyclopedia.com/index/medicinal_plants/cultivation/eco-friendly_farming.php">Read More >></a></span></p>
 		   </div>
 		</div>
 		<hr width="90%" style="background-color: #fefefe;">
@@ -252,8 +250,8 @@ if(empty($err))
 		<div class="row py-3 px-5">
 		   <div class="col-lg-8 blogtext">
 		   		<h2>Top Government Schemes</h2>
-		   		<p style="padding: 1.5em 1em 1em 0em;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		   		<span><a href="#">Read More >></a></span></p>
+		   		<p style="padding: 1.5em 1em 1em 0em;">The Pradhan Mantri Krishi Sinchayee Yojana (PMKSY) was launched during the year 2015-16 with the motto of ‘Har Khet Ko Paani’ for providing end-to end solutions in irrigation supply chain, viz. water sources, distribution network and farm level applications. The PMKSY not only focuses on creating sources for assured irrigation, but also creating protective irrigation by harnessing rain water at micro level through ‘Jal Sanchay’ and ‘Jal Sinchan’.
+		   		<span><a href="http://agricoop.gov.in/divisiontype/rainfed-farming-system/programmes-schemes-new-initiatives">Read More >></a></span></p>
 		   </div>
 		   <div class="col-lg-4 blogimg">
 		   		<img class = "img-responsive" src="https://www.instamojo.com/blog/wp-content/uploads/2020/01/government-schemes.png" width = "100%">
@@ -267,8 +265,8 @@ if(empty($err))
 		   </div>
 		   <div class="col-lg-8 blogtext">
 		   		<h2>Use Of Digital Technology</h2>
-		   		<p style="padding: 1.5em 1em 1em 0em;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		   		<span><a href="#">Read More >></a></span></p>
+		   		<p style="padding: 1.5em 1em 1em 0em;">Digital agriculture refers to tools that digitally collect, store, analyze, and share electronic data and/or information along the agricultural value chain. Other definitions, such as those from the United Nations Project Breakthrough, Cornell University, and Purdue University, also emphasize the role of digital technology in the optimization of food systems.
+		   		<span><a href="https://en.wikipedia.org/wiki/Digital_agriculture#:~:text=Besides%20streamlining%20farm%20production%2C%20digital,costs%20throughout%20the%20value%20chain.">Read More >></a></span></p>
 		   </div>
 		</div>
 	</div>
@@ -282,14 +280,14 @@ if(empty($err))
 	    	</div>
         </div>
 		<div class="row footerhead">
-			<div class="col-md-3 pt-5 mob">
+			<div class="col-md-3 pt-3 mob">
               <h5><img src="./assets/Logo2.png" class="img-responsive"></h5>
             </div>
             <div class="col-md-3 pt-5 pl-3 mob">
-              <a href="" style="text-decoration: none; color:#444;"><h5>Login</h5></a>
+              <a href="" style="text-decoration: none; color:#444;"><h5 style="font-size: 1.5em;">Login</h5></a>
             </div>
             <div class="col-md-3 pt-5 pl-3 contact">
-              <a href="" style="text-decoration: none; color:#444;"><h5>Contact Us</h5></a>
+              <a href="" style="text-decoration: none; color:#444;"><h5 style="font-size: 1.5em;">Contact Us</h5></a>
             </div>
 		</div>
 
@@ -298,26 +296,15 @@ if(empty($err))
 	            <h6 class="text-uppercase font-weight-bold">Products Made With Love</h6>
 	        </div>
 	        <div class="col-md-3 pl-3 pt-4 text-center text-md-left mob">
-	            <a href="#!" class="btn loginbtn mt-1" role="button">Sign In</a>
-	            <h6 class="text-uppercase font-weight-bold pt-5">Not a member yet?</h6>
+	            <a href="#" class="btn loginbtn" role="button" data-toggle="modal" data-target="#at-login">Sign In</a>
+	            <h6 class="text-uppercase font-weight-bold pt-4">Not a member yet?</h6>
 	            <p><i class="fa fa-handshake-o mr-3" aria-hidden="true"></i>Register Now</p>
-	            <a href="#!" class="btn signupbtn" role="button">Sign up!</a>
+	            <a href="./php/register.php" class="btn signupbtn" role="button">Sign up!</a>
 	        </div>
-	        <div class="col-md-3 pl-3 pt-3">
-	          <form id="contact" width="100%">
-	          	<div class="form-group">
-	          		<input id="name" type="text" name="name" placeholder="Name" required>
-	          	</div>
-	          	<div class="form-group">
-	          		<input id="email" type="email" name="email" placeholder="Email" required>
-	          	</div>
-	          	<div class="form-group">
-	          		<textarea id="query" rows="3" cols="24" placeholder="Enter your query" required></textarea>
-	          	</div>
-	          	<div class="form-group">
-	          		<input id="send" type="submit" name="send" value="Send">
-	          	</div>
-	          </form>
+	        <div class="col-md-3 pl-3 pt-4">
+	          <h6><i class="fa fa-phone mr-3" aria-hidden="true"></i>8899776655</h6>
+	          <h6><i class="fa fa-envelope mr-3 mt-4" aria-hidden="true"></i>ty34@gmail.com</h6>
+	          <h6><i class="fa fa-home fa-lg mr-3 mt-4" aria-hidden="true"></i>VIT, Bibwewadi, Pune</h6>
 	        </div>
 	        <div class="col-md-3">
 	        	<img src="./assets/mail.gif" class="img-responsive" width="100%">
