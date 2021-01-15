@@ -71,7 +71,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 				<h4>ALWAYS FRESH</h4>
 			</div>
 			<div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>We are confident in the quality of its products and the consistency of its supply.</p>
 			</div>
 		</div>
 		<div class="col-lg-3">
@@ -85,7 +85,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 				<h4>100% ORGANIC</h4>
 			</div>
 			<div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>Our organic farm fresh products are tested at certified laboratories.</p>
 			</div>
 		</div>
 		<div class="col-lg-3">
@@ -99,7 +99,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 				<h4>NO ADDITIVES</h4>
 			</div>
 			<div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>Reduce human and animal health hazards and ensure sustainability.</p>
 			</div>
 		</div>
 		<div class="col-lg-3">
@@ -113,7 +113,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 				<h4>MODERN FARM</h4>
 			</div>
 			<div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>New and advanced technologies to increase yield and reduce the risk of crop failure.</p>
 			</div>
 		</div>
 	</div>
@@ -150,11 +150,17 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 						<h5 class="card-title" id=<?php echo $row['prodid']; ?> > <?php echo $row['prodname']; ?> </h5>
 						<p class="card-text py-2"><?php 
 							$prodid = $row['prodid'];
-							$res = mysqli_query($conn, "SELECT * from myshop where prodid='$prodid' and price = (select min(price) from myshop where prodid='$prodid')");
+							$res = mysqli_query($conn, "SELECT * from myshop where prodid='$prodid' and price = (select min(price) from myshop where prodid='$prodid' and flag=1) and flag=1");
 							$row1 = mysqli_fetch_array($res);
 							if($row1)
 							{
-								echo "₹",$row1['price'], " per kg";	
+								echo "₹",$row1['price'], " per kg";	?>
+								<form id="addcart" action="./php/addtocart.php" method="post">
+									<button name="add" class="btn addtocart" value="<?php echo $row['prodid'],",",$row1['farmerid'],",",$row1['price']; ?>" onclick="adding('<?php echo $row['prodname']; ?>')">
+										<span><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></span>
+									</button>
+								</form>
+							<?php
 							}
 							else
 							{
@@ -162,11 +168,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 							}
 							
 						?></p>
-						<form id="addcart" action="http://localhost/Farmer/php/addtocart.php" method="post">
-							<button name="add" class="btn addtocart" value="<?php echo $row['prodid'],",",$row1['farmerid'],",",$row1['price']; ?>" onclick="adding('<?php echo $row['prodname']; ?>')">
-								<span><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></span>
-							</button>
-						</form>
+						
 					</div>
 				</div>
 				</div>

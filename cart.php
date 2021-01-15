@@ -22,15 +22,27 @@ if(isset($_POST['plus']))
   	$cid = $row["userid"];	
 
   	$sql3 = mysqli_query($conn,"SELECT * FROM cart WHERE userid='$cid' and farmerid='$fid' and prodid='$pid' and flag=1");
-  	$row = mysqli_fetch_array($sql3);
+  	$row3 = mysqli_fetch_array($sql3);
 
-  	$quantity=$row['cart_quantity']+1;
-    $sql1 = "UPDATE cart SET cart_quantity='$quantity' WHERE userid='$cid' and farmerid='$fid' and prodid='$pid'";
-    mysqli_query($conn,$sql1);
-    if(mysqli_error($conn))
-    	echo("Errorcode: " . mysqli_errno($conn));
+  	$sql4 = mysqli_query($conn,"SELECT * FROM myshop WHERE farmerid='$fid' and prodid='$pid' and flag=1");
+  	$row4 = mysqli_fetch_array($sql4);
 
-    header("location: #products");
+  	if($row4['quantity']>$row3['cart_quantity'])
+  	{
+  		$quantity=$row3['cart_quantity']+1;
+	    $sql1 = "UPDATE cart SET cart_quantity='$quantity' WHERE userid='$cid' and farmerid='$fid' and prodid='$pid'";
+	    mysqli_query($conn,$sql1);
+	    if(mysqli_error($conn))
+	    	echo("Errorcode: " . mysqli_errno($conn));
+
+	    header("location: #products");
+  	}
+  	else
+  	{
+  		echo '<script>alert("Sorry! Cannot add more items. Maximum limit reached.")</script>';
+  	}
+
+   
 }
 
 if(isset($_POST['minus']))
@@ -45,11 +57,11 @@ if(isset($_POST['minus']))
   	$row = mysqli_fetch_array($sql2);
   	$cid = $row["userid"];
 
-  	$sql3 = mysqli_query($conn,"SELECT * FROM cart WHERE userid='$cid' and farmerid='$fid' and prodid='$pid' and flag=1 ");
+  	$sql3 = mysqli_query($conn,"SELECT * FROM cart WHERE userid='$cid' and farmerid='$fid' and prodid='$pid' and flag=1");
   	$row1 = mysqli_fetch_array($sql3);
 
   	$quantity=$row1['cart_quantity']-1;
-  	echo $quantity;
+  	
   	if($quantity>0)
   	{
   		$sql1 = "UPDATE cart SET cart_quantity='$quantity' WHERE userid='$cid' and farmerid='$fid' and prodid='$pid'";
@@ -59,13 +71,13 @@ if(isset($_POST['minus']))
   	}
   	else
   	{
-  		$sql1 = "DELETE from cart WHERE userid='$cid' and farmerid='$fid' and prodid='$pid'";
+  		$sql1 = "UPDATE cart SET cart_quantity=0,flag=0 WHERE userid='$cid' and farmerid='$fid' and prodid='$pid'";
     	mysqli_query($conn,$sql1);
     	if(mysqli_error($conn))
     		echo("Errorcode: " . mysqli_errno($conn));
   	}
  
- 	header("location: #products");   
+ 	header("location: #products"); 
 }
 
 ?>
